@@ -19,5 +19,13 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     # You can test your matrix by printing the current Python version
-    - name: test
-      run: pytest
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+    - name: Test with pytest
+      run: |
+        pwd
+        ls -la
+        ls -la spotifynews
+        pytest
