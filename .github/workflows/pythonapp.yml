@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       # You can use PyPy versions in python-version.
@@ -22,10 +21,9 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install -r requirements.txt
         pip install pytest
     - name: Test with pytest
       run: |
-        pwd
-        ls -la
-        ls -la spotifynews
-        pytest
+        echo $SPOTIPY_CLIENT_ID
+        pytest tests/test_sqlite3db.py
