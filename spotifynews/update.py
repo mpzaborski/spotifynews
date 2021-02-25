@@ -15,7 +15,7 @@ def news(database_f, original_playlist_id):
     return True
 
 
-def append(database_f, original_playlist_id):
+def collections(database_f, original_playlist_id):
     db = Sqlite3db(database_f=database_f)
     client = Client()
     known_track_ids = db.select_songs(playlist_id=original_playlist_id)

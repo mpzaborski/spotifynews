@@ -1,3 +1,4 @@
+import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
@@ -11,6 +12,7 @@ fresh_potato_uri = 'spotify:playlist:2jy0fdFot5DUgctVaXjx8U'
 class Client(spotipy.Spotify):
     def __init__(self):
         scope = 'playlist-modify-public'
+        os.environ['SPOTIPY_REDIRECT_URI'] = 'http://localhost:8888/callback/'
         super().__init__(client_credentials_manager=SpotifyOAuth(scope=scope))
 
     def update_mirror_playlist(self, original_playlist_id, known_track_ids, playlist_part_name=''):
