@@ -1,8 +1,8 @@
 # spotifynews
 
 <p float="left">
-  <img src="./docs/images/news.jpg" width="400" />
-  <img src="./docs/images/collections.jpg" width="400" />
+  <img src="https://github.com/mpzaborski/spotifynews/blob/master/docs/images/news.jpg" width="400" />
+  <img src="https://github.com/mpzaborski/spotifynews/blob/master/docs/images/collections.jpg" width="400" />
 </p>
 
 ##### Python library for creating news and collections
@@ -11,8 +11,8 @@
 
 ## Description
 
-Spotifynews is a wrapper on [spotipy](https://github.com/plamere/spotipy) that provides new more complex
-functionalities: [news](#news-anchor) and [collections](#collectionsanchor). It also
+[Spotifynews](https://github.com/mpzaborski/spotifynews) is a wrapper on [spotipy](https://github.com/plamere/spotipy)
+that provides new more complex functionalities: [news](#news-anchor) and [collections](#collections-anchor). It also
 extends spotipy with additional functions that aim to simplify spotipy usage.
 
 ## Installation
