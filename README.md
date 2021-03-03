@@ -9,6 +9,12 @@
 
 ![workflow name](https://github.com/mpzaborski/spotifynews/workflows/Python%20package/badge.svg)
 
+## Description
+
+Spotifynews is a wrapper on [spotipy](https://github.com/plamere/spotipy) that provides new more complex
+functionalities: [news](#news-anchor) and [collections](#collectionsanchor). It also
+extends spotipy with additional functions that aim to simplify spotipy usage.
+
 ## Installation
 
 ```bash
@@ -22,13 +28,12 @@ pip install spotifynews --upgrade
 ```
 
 ## Quick Start
-Spotifynews is a wrapper on [spotipy](https://github.com/plamere/spotipy).
 
 To get started, install spotifynews and create an app on https://developers.spotify.com/.
 Add your new SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET to your environment.
 After script run for the first time authorize on spotify webpage by logging and allowing scope playlist-modify-public.
 
-### News
+### <a name="news-anchor"></a>News
 This functionality accumulates song from source playlist in local database and based on that it is able to notice truly
 new tracks, because new trucks are not yet in database. If this situation occurs, it creates clone of original playlist
 with only new tracks.
@@ -41,7 +46,7 @@ todays_top_hits_id = 'spotify:playlist:37i9dQZF1DXcBWIGoYBM5M'
 news(database_f="test.db", original_playlist_id=todays_top_hits_id)
 ```
 
-### Collections
+### <a name="collections-anchor">Collections
 This functionality creates playlist from all songs stored from source playlist in local database (songs which were
 stored after 'news' function call). If you follow a playlist with 50 songs, which rotates 3 new songs per week, after
 a year your clone playlist collection will have 86 tracks.
