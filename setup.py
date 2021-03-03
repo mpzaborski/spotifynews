@@ -26,7 +26,7 @@ setuptools.setup(
         'pyparsing>=2.4.7',
         'requests>=2.25.0',
         'six>=1.15.0',
-        'spotipy>=2.16.1',
+        'spotipy>=2.17.1',
         'toml>=0.10.0',
         'urllib3>=1.26.0'
     ],

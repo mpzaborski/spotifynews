@@ -8,6 +8,13 @@ armanigio_uri = 'spotify:user:g79v8cz5ma6n4l9od93ebt3u6'
 slow_potato_uri = 'spotify:playlist:0uUGP7T2r47EHlj75FUk06'
 fresh_potato_uri = 'spotify:playlist:2jy0fdFot5DUgctVaXjx8U'
 
+SPOTIFY_MAX_PLAYLIST_ITEMS = 10000
+SPOTIFY_MAX_READ_ITEMS = 100
+
+
+def chunk_playlist(item_ids):
+    return [item_ids[x:x + SPOTIFY_MAX_READ_ITEMS] for x in range(0, len(item_ids), SPOTIFY_MAX_READ_ITEMS)]
+
 
 class Client(spotipy.Spotify):
     def __init__(self):
@@ -19,13 +26,14 @@ class Client(spotipy.Spotify):
         mirror_playlist_id = self.get_mirror_playlist_id(original_playlist_id, playlist_part_name)
         self.playlist_remove_all_items(mirror_playlist_id)
         mirror_playlist_item_ids = self.get_mirror_playlist_item_ids(original_playlist_id, known_track_ids)
-        if mirror_playlist_item_ids:
-            self.playlist_add_items(mirror_playlist_id, mirror_playlist_item_ids)
+        for chunk in chunk_playlist(mirror_playlist_item_ids):
+            self.playlist_add_items(playlist_id=mirror_playlist_id, items=chunk)
         return mirror_playlist_item_ids
 
     def playlist_remove_all_items(self, playlist_id):
         playlist_item_ids = self._get_playlist_track_ids_by_playlist_id(playlist_id)
-        self.playlist_remove_all_occurrences_of_items(playlist_id=playlist_id, items=playlist_item_ids)
+        for chunk in chunk_playlist(playlist_item_ids):
+            self.playlist_remove_all_occurrences_of_items(playlist_id=playlist_id, items=chunk)
 
     def get_mirror_playlist_id(self, original_playlist_id, playlist_part_name):
         original_playlist_name = self.playlist(playlist_id=original_playlist_id)['name']
@@ -38,11 +46,11 @@ class Client(spotipy.Spotify):
         return mirror_playlist_id
 
     def get_mirror_playlist_item_ids(self, original_playlist_id, known_track_ids):
-        original_playlist = self.playlist(playlist_id=original_playlist_id)
+        original_playlist_item_ids = self._get_playlist_track_ids_by_playlist_id(playlist_id=original_playlist_id)
         mirror_playlist_item_ids = []
-        for item in original_playlist['tracks']['items']:
-            if item['track']['uri'] not in known_track_ids:
-                mirror_playlist_item_ids.append(item['track']['uri'])
+        for item_id in original_playlist_item_ids:
+            if item_id not in known_track_ids:
+                mirror_playlist_item_ids.append(item_id)
         return mirror_playlist_item_ids
 
     def _get_user_playlist_id_by_name(self, name):
@@ -52,8 +60,13 @@ class Client(spotipy.Spotify):
                 return item['uri']
 
     def _get_playlist_track_ids_by_playlist_id(self, playlist_id):
-        playlist = self.playlist(playlist_id=playlist_id)
+        tracks = self.playlist(playlist_id)['tracks']
+        items = tracks['items']
+        while tracks['next']:
+            tracks = self.next(tracks)
+            items.extend(tracks['items'])
+
         playlist_item_ids = []
-        for item in playlist['tracks']['items']:
+        for item in items:
             playlist_item_ids.append(item['track']['uri'])
         return playlist_item_ids
