@@ -1,10 +1,5 @@
 # spotifynews
 
-<p float="left">
-  <img src="https://github.com/mpzaborski/spotifynews/blob/master/docs/images/news.jpg" width="400" />
-  <img src="https://github.com/mpzaborski/spotifynews/blob/master/docs/images/collections.jpg" width="400" />
-</p>
-
 ##### Python library for creating news and collections
 
 ![workflow name](https://github.com/mpzaborski/spotifynews/workflows/Python%20package/badge.svg)
