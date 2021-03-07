@@ -26,6 +26,15 @@ API Reference
     :special-members: __init__
     :show-inheritance:
 
+:mod:`client` Module
+=======================
+
+.. automodule:: spotifynews.spotify.client
+    :members:
+    :undoc-members:
+    :special-members: __init__
+    :show-inheritance:
+
 :mod:`update` Module
 =======================
 

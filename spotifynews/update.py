@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Python library for operations with Spotify Web API and database"""
+""" Python library for operations with Spotify Web API and database """
 
 from .database.sqlite3db import Sqlite3db
 from .spotify.client import Client, chunk_playlist
