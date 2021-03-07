@@ -24,7 +24,11 @@ pip install spotifynews --upgrade
 
 ## Quick Start
 
-More information can be found in the [online documentation](https://spotifynews.readthedocs.io/en/latest).
+More information about spotifynews can be found in the
+[spotifynews documentation](https://spotifynews.readthedocs.io/en/latest).
+
+More information about spotipy can be found in the
+[spotipy documentation](https://spotipy.readthedocs.io/en/latest).
 
 To get started, install spotifynews and create an app on https://developers.spotify.com/.
 Add your new SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET to your environment.
