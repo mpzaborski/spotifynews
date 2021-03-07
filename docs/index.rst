@@ -46,7 +46,7 @@ API Reference
 
 License
 =======
-https://github.com/mpzaborski/spotifynews/blob/develop/LICENSE.md
+https://github.com/mpzaborski/spotifynews/blob/master/LICENSE.md
 
 
 Indices and tables
