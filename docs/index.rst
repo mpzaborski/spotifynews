@@ -14,6 +14,27 @@ Welcome to spotifynews!
    :maxdepth: 2
    :caption: Contents:
 
+API Reference
+==============
+
+:mod:`sqlite3db` Module
+=======================
+
+.. automodule:: spotifynews.database.sqlite3db
+    :members:
+    :undoc-members:
+    :special-members: __init__
+    :show-inheritance:
+
+:mod:`update` Module
+=======================
+
+.. automodule:: spotifynews.update
+    :members:
+    :undoc-members:
+    :special-members: __init__
+    :show-inheritance:
+
 License
 =======
 https://github.com/mpzaborski/spotifynews/blob/develop/LICENSE.md
