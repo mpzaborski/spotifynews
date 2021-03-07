@@ -4,7 +4,7 @@
 
 ### Added
 
-- sphinx documentation
+- Sphinx documentation
 
 ## [0.1.2] - 2021-03-04
 
