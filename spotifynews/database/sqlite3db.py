@@ -30,7 +30,11 @@ class Sqlite3db:
             :param song_id: song ID, URI or URL
         """
         self.c.execute("""INSERT INTO songs VALUES(NULL, ?)""", (song_id,))
-        self.c.execute("""INSERT INTO playlists VALUES(NULL, ?)""", (playlist_id,))
+        self.c.execute("""SELECT * FROM playlists WHERE playlistName=:playlist_name""",
+                       {"playlist_name": playlist_id})
+        playlist_db_id = self.c.fetchall()
+        if not playlist_db_id:
+            self.c.execute("""INSERT INTO playlists VALUES(NULL, ?)""", (playlist_id,))
         self.c.execute("""INSERT INTO songs_playlists VALUES(?, ?)""", (song_id, playlist_id))
         self.conn.commit()
 
@@ -57,7 +61,7 @@ class Sqlite3db:
         """ Create tables in database if not exist. Crucial step in freshly created database.
         """
         self.c.execute("""CREATE TABLE if not exists songs (id INTEGER PRIMARY KEY AUTOINCREMENT, songName TEXT);""")
-        self.c.execute("""CREATE TABLE if not exists playlists (id INTEGER PRIMARY KEY AUTOINCREMENT, playlistName TEXT);""")
+        self.c.execute("""CREATE TABLE if not exists playlists (id INTEGER PRIMARY KEY AUTOINCREMENT, playlistName TEXT NOT NULL UNIQUE);""")
         self.c.execute("""CREATE TABLE if not exists songs_playlists (song_id INTEGER, playlist_id INTEGER, FOREIGN KEY(song_id)
                   REFERENCES song(id), FOREIGN KEY(playlist_id) REFERENCES playlist(id));""")
         self.conn.commit()
