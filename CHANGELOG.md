@@ -1,10 +1,15 @@
 # Changelog
 
+## [0.1.4] - 2021-03-27
+
+### Fixed
+- Playlist duplicate in database
+
 ## [0.1.3] - 2021-03-07
 
 ### Added
 
-- sphinx documentation
+- Sphinx documentation
 
 ## [0.1.2] - 2021-03-04
 
