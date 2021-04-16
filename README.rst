@@ -2,7 +2,17 @@
 
 ##### Python library for creating news and collections
 
-![workflow name](https://github.com/mpzaborski/spotifynews/workflows/Python%20package/badge.svg)
+
+.. image:: https://img.shields.io/pypi/v/spotifynews.svg
+    :target: https://pypi.org/project/spotifynews/
+    :alt: Latest Version
+
+.. image:: https://readthedocs.org/projects/spotifynews/badge/?version=latest
+    :target: https://https://spotifynews.readthedocs.io/en/latest/
+    :alt: Latest Docs
+
+.. image:: https://github.com/mpzaborski/spotifynews/workflows/CI/badge.svg?branch=feature/add-badges
+    :target: https://github.com/mpzaborski/spotifynews/actions?query=branch%3Amaster
 
 ## Description
 
