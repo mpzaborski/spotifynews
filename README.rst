@@ -25,12 +25,12 @@ Installation
 ~~~~~~~~~~~~
 
 .. code-block:: console
-    pip install spotifynews
+    $ pip install spotifynews
 
 or upgrade
 
 .. code-block:: console
-    pip install spotifynews --upgrade
+    $ pip install spotifynews --upgrade
 
 Quick Start
 ~~~~~~~~~~~
@@ -53,9 +53,10 @@ with only new tracks.
 To utilize this functionality run script once a week and enjoy new hits from your favorite playlist :coffee:
 
 .. code-block:: pycon
-    from spotifynews.update import news
-    todays_top_hits_id = 'spotify:playlist:37i9dQZF1DXcBWIGoYBM5M'
-    news(database_f="test.db", original_playlist_id=todays_top_hits_id)
+
+    >>> from spotifynews.update import news
+    >>> todays_top_hits_id = 'spotify:playlist:37i9dQZF1DXcBWIGoYBM5M'
+    >>> news(database_f="test.db", original_playlist_id=todays_top_hits_id)
 
 Collections
 ***********
@@ -65,9 +66,10 @@ stored after 'news' function call). If you follow a playlist with 50 songs, whic
 a year your clone playlist collection will have 86 tracks.
 
 .. code-block:: pycon
-    from spotifynews.update import collections
-    todays_top_hits_id = 'spotify:playlist:37i9dQZF1DXcBWIGoYBM5M'
-    collections(database_f="test.db", original_playlist_id=todays_top_hits_id)
+
+    >>> from spotifynews.update import collections
+    >>> todays_top_hits_id = 'spotify:playlist:37i9dQZF1DXcBWIGoYBM5M'
+    >>> collections(database_f="test.db", original_playlist_id=todays_top_hits_id)
 
 .. _`Spotifynews`: https://github.com/mpzaborski/spotifynews
 .. _`spotipy`: https://github.com/plamere/spotipy
