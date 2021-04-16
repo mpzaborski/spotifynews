@@ -18,8 +18,7 @@ Python library for creating news and collections
 Description
 ~~~~~~~~~~~
 
-[Spotifynews](https://github.com/mpzaborski/spotifynews) is a wrapper on [spotipy](https://github.com/plamere/spotipy)
-that provides new more complex functionalities: news and collections. It also
+`Spotifynews`_ is a wrapper on `spotipy`_ that provides new more complex functionalities: news and collections. It also
 extends spotipy with additional functions that aim to simplify spotipy usage.
 
 Installation
@@ -38,11 +37,9 @@ pip install spotifynews --upgrade
 Quick Start
 ~~~~~~~~~~~
 
-More information about spotifynews can be found in the
-[spotifynews documentation](https://spotifynews.readthedocs.io/en/latest).
+More information about spotifynews can be found in the `spotifynews documentation`_.
 
-More information about spotipy can be found in the
-[spotipy documentation](https://spotipy.readthedocs.io/en/latest).
+More information about spotipy can be found in the `spotipy documentation`_.
 
 To get started, install spotifynews and create an app on https://developers.spotify.com/.
 Add your new SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET to your environment.
@@ -73,3 +70,8 @@ a year your clone playlist collection will have 86 tracks.
     from spotifynews.update import collections
     todays_top_hits_id = 'spotify:playlist:37i9dQZF1DXcBWIGoYBM5M'
     collections(database_f="test.db", original_playlist_id=todays_top_hits_id)
+
+.. _`Spotifynews`: https://github.com/mpzaborski/spotifynews
+.. _ `spotipy`: https://github.com/plamere/spotipy
+.. _`spotifynews documentation`: https://spotifynews.readthedocs.io/en/latest
+.. _`spotipy documentation`: https://spotipy.readthedocs.io/en/latest
