@@ -25,11 +25,13 @@ Installation
 ~~~~~~~~~~~~
 
 .. code-block:: console
+
     $ pip install spotifynews
 
 or upgrade
 
 .. code-block:: console
+
     $ pip install spotifynews --upgrade
 
 Quick Start
