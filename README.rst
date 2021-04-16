@@ -72,6 +72,6 @@ a year your clone playlist collection will have 86 tracks.
     collections(database_f="test.db", original_playlist_id=todays_top_hits_id)
 
 .. _`Spotifynews`: https://github.com/mpzaborski/spotifynews
-.. _ `spotipy`: https://github.com/plamere/spotipy
+.. _`spotipy`: https://github.com/plamere/spotipy
 .. _`spotifynews documentation`: https://spotifynews.readthedocs.io/en/latest
 .. _`spotipy documentation`: https://spotipy.readthedocs.io/en/latest
