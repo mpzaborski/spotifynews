@@ -24,15 +24,13 @@ extends spotipy with additional functions that aim to simplify spotipy usage.
 Installation
 ~~~~~~~~~~~~
 
-```bash
-pip install spotifynews
-```
+.. code-block:: bash
+    pip install spotifynews
 
 or upgrade
 
-```bash
-pip install spotifynews --upgrade
-```
+.. code-block:: bash
+    pip install spotifynews --upgrade
 
 Quick Start
 ~~~~~~~~~~~
